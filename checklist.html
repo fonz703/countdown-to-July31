@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Checklist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+    }
+    .checklist {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .task {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .task input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    button {
+      display: block;
+      margin: 1rem auto 0;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #ff4c4c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e03d3d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Daily Checklist</h1>
+
+  <div class="checklist">
+    <div class="task"><input type="checkbox"> Wake up early</div>
+    <div class="task"><input type="checkbox"> Exercise</div>
+    <div class="task"><input type="checkbox"> Eat a healthy breakfast</div>
+    <div class="task"><input type="checkbox"> Check emails</div>
+    <div class="task"><input type="checkbox"> Complete top 3 priorities</div>
+    <div class="task"><input type="checkbox"> Take a break</div>
+    <div class="task"><input type="checkbox"> Review progress</div>
+    <div class="task"><input type="checkbox"> Plan for tomorrow</div>
+
+    <button onclick="resetChecklist()">Reset Checklist</button>
+  </div>
+
+  <script>
+    function resetChecklist() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(box => box.checked = false);
+    }
+  </script>
+
+</body>
+</html>
