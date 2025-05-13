@@ -79,25 +79,17 @@
       countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
 
-    const timer = setInterval(updateCountdown, 1000);
+       setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // --- Background Image Slideshow Logic ---
-    const images = [
-      "images/atl.jpg",
-      "images/atl2.jpg",
-      "images/bg.jpg",
-      "images/fob_bots.png",
-    ];
+    const images = ["images/bg1.jpg", "images/bg2.jpg", "images/bg3.jpg"];
+    let current = 0;
 
-    let currentIndex = 0;
-    const background = document.getElementById('background');
-
-    function changeBackground() {
-      background.style.backgroundImage = `url('${imageUrls[currentIndex]}')`;
-      currentIndex = (currentIndex + 1) % imageUrls.length;
-    }
-
+    function rotateBackground() {{
+      document.body.style.backgroundImage = `url('${{images[current]}}')`;
+      current = (current + 1) % images.length;
+    }}
+    
     changeBackground(); // initial call
     setInterval(changeBackground, 10000); // every 10 seconds
   </script>
